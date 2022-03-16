@@ -8,3 +8,4 @@ vcluster:
 
  persistentvolumeclaims:
     enabled: false
+    
