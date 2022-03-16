@@ -13,8 +13,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Login Docker Registry
-      run: docker login -u ${{ secrets.RegistryUsername }} -p ${{ secrets.RegistryPassword }}
+      run: docker login -u ${{ secrets.REGISTRYUSERNAME }} -p ${{ secrets.REGISTRYUSERNAME }}
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag a1tan/sampleapp:pull-$GITHUB_SHA
+      run: docker build . --file Dockerfile --tag a1tan/sampleapp:pull-$(GITHUB_SHA)
     - name: Push the Docker image
-      run: docker push a1tan/sampleapp:pull-$GITHUB_SHA
+      run: docker push a1tan/sampleapp:pull-$(GITHUB_SHA)
