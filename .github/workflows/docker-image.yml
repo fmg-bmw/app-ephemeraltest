@@ -17,7 +17,7 @@ jobs:
       run: docker login -u ${{ secrets.REGISTRYUSERNAME }} -p ${{ secrets.REGISTRYPASSWORD }}
       
     - name: Build the Docker image
-      run: docker build . --file sampleapp/Dockerfile --tag a1tan/sampleapp:pull-$(GITHUB_SHA)
+      run: docker build . --file sampleapp/Dockerfile --tag a1tan/sampleapp:pull-${GITHUB_SHA}
       
     - name: Push the Docker image
-      run: docker push a1tan/sampleapp:pull-$(GITHUB_SHA)
+      run: docker push a1tan/sampleapp:pull-${GITHUB_SHA}
