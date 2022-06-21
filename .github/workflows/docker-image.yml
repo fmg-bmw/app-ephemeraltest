@@ -14,7 +14,7 @@ jobs:
     - uses: actions/checkout@v3
     
     - name: Login Docker Registry
-      run: docker login -u ${{ secrets.REGISTRYUSERNAME }} -p ${{ secrets.REGISTRYUSERNAME }}
+      run: docker login -u ${{ secrets.REGISTRYUSERNAME }} -p ${{ secrets.REGISTRYPASSWORD }}
       
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag a1tan/sampleapp:pull-$(GITHUB_SHA)
